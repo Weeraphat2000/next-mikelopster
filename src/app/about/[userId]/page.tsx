@@ -2,7 +2,16 @@
 import { useParams } from "next/navigation";
 import React from "react";
 
-function page({ params: { userId } }: { params: { userId: string } }) {
+function page({
+  params: { userId },
+  searchParams: { ab },
+}: {
+  params: { userId: string };
+  searchParams: { ab: string };
+}) {
+  // มี params และ searchParams ใน page
+  console.log(ab, "params in page");
+
   const a = useParams();
 
   return (

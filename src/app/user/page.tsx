@@ -11,7 +11,7 @@ async function page() {
   const result = await axios
     .get("https://661c0128e7b95ad7fa697f72.mockapi.io/api/block/userName")
     .then((response: AxiosResponse<MyData[]>) => {
-      console.log(response, "response");
+      console.log(response, "response user");
       const data = response.data;
       return data;
     });
