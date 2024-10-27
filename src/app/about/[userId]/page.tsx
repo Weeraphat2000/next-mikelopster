@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import React from "react";
 
 function page({
@@ -9,10 +9,15 @@ function page({
   params: { userId: string };
   searchParams: { ab: string };
 }) {
+  // http://localhost:3002/about/123?ab=qqwqweeeee
+
   // มี params และ searchParams ใน page
-  console.log(ab, "params in page");
+  console.log(ab, "params in page"); // qqwqweeeee
 
   const a = useParams();
+  const path = usePathname();
+  console.log(path, "usePathname"); // /about/123
+  console.log(a, "useParams"); // {userId: "123"}
 
   return (
     <div>
